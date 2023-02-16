@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: [[forms[0].name]]-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      deployment: hello
+  template:
+    metadata:
+      labels:
+        deployment: hello
+    spec:
+      containers:
+      - name: [[forms[0].name]]-container
+        image: monopole/hello:latest
+        command: ["/hello",
+                  "--port=[[forms[0].port]]"]
+        ports:
+        - containerPort: [[forms[0].port]]
+        env:
+        - name: ALT_GREETING
+          valueFrom:
+            configMapKeyRef:
+              name: [[forms[0].name]]-config
+              key: altGreeting

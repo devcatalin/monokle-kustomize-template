@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: [[forms[0].name]]-config
+data:
+  altGreeting: [[forms[0].greeting]]
+  enableRisky: "false"

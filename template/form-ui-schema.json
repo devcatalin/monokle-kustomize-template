@@ -1,0 +1,19 @@
+{
+  "name": {
+    "ui:title": "Name",
+    "ui:help": "The base name of the generated manifest files"
+  },
+  "namespace": {
+    "ui:title": "Namespace",
+    "ui:help": "The target namespace for the kustomization",
+    "ui:widget": "namespaceSelection"
+  },
+  "port": {
+    "ui:title": "Port",
+    "ui:help": "The port exposed by the service"
+  },
+  "greeting": {
+    "ui:title": "Greeting",
+    "ui:help": "The greeting message to be displayed by the application"
+  }
+}

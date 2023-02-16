@@ -1,0 +1,33 @@
+{
+  "name": "Kustomize Demo",
+  "id": "com.github.devcatalin.monokle-kustomize-template.demo",
+  "author": "Catalin",
+  "version": "1.0.0",
+  "description": "Creates a Kustomization for deploying a Hello World app",
+  "type": "vanilla",
+  "repository": "https://github.dev/devcatalin/monokle-kustomize-template",
+  "forms": [
+    {
+      "name": "Kustomize Hello World Demo Setup",
+      "description": "Easily configure a Kustomization for deploying a Hello World app",
+      "schema": "form-schema.json",
+      "uiSchema": "form-ui-schema.json"
+    }
+  ],
+  "manifests": [
+    {
+      "filePath": "kustomization.yaml"
+    },
+    {
+      "filePath": "deployment.yaml"
+    },
+    {
+      "filePath": "service.yaml"
+    },
+    {
+      "filePath": "configmap.yaml"
+    }
+  ],
+  "resultMessage": "Successfully created Kustomization for deploying a Hello World app",
+  "helpUrl": "https://github.com/devcatalin/monokle-kustomize-template"
+}

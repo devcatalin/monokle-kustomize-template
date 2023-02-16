@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: [[forms[0].name]]-service
+spec:
+  selector:
+    deployment: hello
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: [[forms[0].port]]
+    targetPort: [[forms[0].port]]

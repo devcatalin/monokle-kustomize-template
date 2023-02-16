@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": ["name", "image", "targetPort"],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string",
+      "default": "default"
+    },
+    "port": {
+      "type": "number",
+      "default": 80
+    },
+    "greeting": {
+      "type": "string",
+      "default": "Hello World"
+    }
+  }
+}
