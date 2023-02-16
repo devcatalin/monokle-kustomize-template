@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "required": ["name", "image", "targetPort"],
+  "required": ["name", "namespace", "port", "greeting"],
   "properties": {
     "name": {
       "type": "string"
