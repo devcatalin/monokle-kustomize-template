@@ -4,9 +4,9 @@ metadata:
   name: [[forms[0].name]]-service
 spec:
   selector:
-    deployment: hello
+    deployment: [forms[0].name]
   type: NodePort
   ports:
-  - protocol: TCP
-    port: [[forms[0].port]]
-    targetPort: [[forms[0].port]]
+    - port: [[forms[0].servicePort]]
+      protocol: TCP
+      targetPort: [[forms[0].targetPort]]

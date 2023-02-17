@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "required": ["name", "namespace", "port", "greeting"],
+  "required": ["name", "targetPort", "image", "command"],
   "properties": {
     "name": {
       "type": "string"
@@ -9,13 +9,33 @@
       "type": "string",
       "default": "default"
     },
-    "port": {
+    "image": {
+      "type": "string"
+    },
+    "command": {
+      "type": "string"
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "serviceType": {
+      "type": "string",
+      "default": "LoadBalancer",
+      "enum": ["LoadBalancer", "NodePort", "ClusterIP"]
+    },
+    "servicePort": {
       "type": "number",
       "default": 80
     },
-    "greeting": {
-      "type": "string",
-      "default": "Hello World"
+    "targetPort": {
+      "type": "number"
+    },
+    "replicas": {
+      "type": "number",
+      "default": 1
     }
   }
 }

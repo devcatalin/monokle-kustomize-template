@@ -3,25 +3,21 @@ kind: Deployment
 metadata:
   name: [[forms[0].name]]-deployment
 spec:
-  replicas: 3
+  replicas: [[forms[0].replicas]]
   selector:
     matchLabels:
-      deployment: hello
+      deployment: [[forms[0].name]]
   template:
     metadata:
       labels:
-        deployment: hello
+        deployment: [[forms[0].name]]
     spec:
       containers:
       - name: [[forms[0].name]]-container
-        image: monopole/hello:latest
-        command: ["/hello",
-                  "--port=[[forms[0].port]]"]
+        image: [[forms[0].image]]
+        command: [[forms[0].command]]
         ports:
-        - containerPort: [[forms[0].port]]
-        env:
-        - name: ALT_GREETING
-          valueFrom:
-            configMapKeyRef:
-              name: [[forms[0].name]]-config
-              key: altGreeting
+        - containerPort: [[forms[0].targetPort]]
+        envFrom:
+        - configMapRef:
+          name: [[forms[0].name]]-config

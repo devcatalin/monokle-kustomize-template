@@ -3,5 +3,4 @@ kind: ConfigMap
 metadata:
   name: [[forms[0].name]]-config
 data:
-  altGreeting: [[forms[0].greeting]]
-  enableRisky: "false"
+[[Object.entries(forms[0].env).map((k, v) => `  ${k}: ${v}\n`)]]
