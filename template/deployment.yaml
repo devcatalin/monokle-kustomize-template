@@ -15,9 +15,9 @@ spec:
       containers:
       - name: [[forms[0].name]]-container
         image: [[forms[0].image]]
-        command: [[JSON.stringify(forms[0].command)]]
         ports:
         - containerPort: [[forms[0].targetPort]]
         envFrom:
         - configMapRef:
             name: [[forms[0].name]]-config
+[[forms[0].command ? `        command: ${JSON.stringify(forms[0].command)}` : '']]
