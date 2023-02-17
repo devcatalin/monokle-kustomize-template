@@ -20,4 +20,4 @@ spec:
         - containerPort: [[forms[0].targetPort]]
         envFrom:
         - configMapRef:
-          name: [[forms[0].name]]-config
+            name: [[forms[0].name]]-config

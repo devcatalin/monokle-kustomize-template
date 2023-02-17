@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: [[forms[0].name]]-config
 data:
-[[Object.entries(forms[0].env).map((k, v) => `  ${k}: ${v}\n`)]]
+[[Object.entries(forms[0].env).map(([k, v]) => `  ${k}: ${v}\n`)]]
