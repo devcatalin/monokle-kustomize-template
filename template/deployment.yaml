@@ -21,5 +21,5 @@ spec:
               runAsUser: 2000
           envFrom:
             - configMapRef:
-              name: [[forms[0].name]]-config
+                name: [[forms[0].name]]-config
 [[forms[0].command ? `          command: ${JSON.stringify(forms[0].command)}` : '']]
