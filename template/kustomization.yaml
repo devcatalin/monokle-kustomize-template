@@ -9,6 +9,6 @@ commonLabels:
 namespace: [[forms[0].namespace]]
 
 resources:
-- [[forms[0].name]]-deployment.yaml
-- [[forms[0].name]]-service.yaml
-- [[forms[0].name]]-config.yaml
+  - [[forms[0].name]]-deployment.yaml
+  - [[forms[0].name]]-service.yaml
+  - [[forms[0].name]]-config.yaml
